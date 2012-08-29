@@ -1,5 +1,11 @@
+PATH
+  remote: .
+  specs:
+    tent-schemas (0.1.0)
+      json-schema
+
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     json-schema (1.0.8)
 
@@ -7,4 +13,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  json-schema
+  tent-schemas!

@@ -1,3 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'json-schema'
+# Specify your gem's dependencies in tent-schema.gemspec
+gemspec

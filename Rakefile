@@ -1,5 +1,6 @@
-require 'bundler/setup'
+require 'bundler/gem_tasks'
 require 'rake/testtask'
+require File.expand_path('../lib/tent-schemas', __FILE__)
 require 'fileutils'
 require 'json'
 require 'yaml'
@@ -12,9 +13,8 @@ task :default => :test
 
 desc "Generate schema json"
 task :generate do
-  FileUtils.mkdir('output')
-  Dir.glob('schemas/*').each do |schema|
-    json = JSON.pretty_generate(YAML.load(File.read(schema)))
-    File.open("output/#{File.basename(schema, '.yaml')}.json", 'w') { |f| f.write(json) }
+  FileUtils.mkdir_p('output')
+  TentSchemas.each do |name,schema|
+    File.open("output/#{name}.json", 'w') { |f| f.write(JSON.pretty_generate(schema)) }
   end
 end
