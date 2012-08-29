@@ -1,0 +1,45 @@
+title: Tent Post
+type: object
+properties:
+  id:
+    description: The unique identifier of the post.
+    type: string
+    require: true
+  entity:
+    description: The entity that published the post.
+    type: string
+    format: uri
+    required: true
+  published_at:
+    description: The date/time when the post was published in Unix time.
+    type: integer
+    required: true
+  received_at:
+    description:
+      The date/time when the post was received from the publishing server in
+      Unix time.
+    type: integer
+  licenses:
+    description: The licenses that the post is released under.
+    type: array
+    items:
+      type: string
+      format: uri
+    required: true
+  public:
+    description:
+      Indicates whether the post has been published publicly. Unauthenticated 
+      requests can only see public posts.
+    type: boolean
+    required: true
+  type:
+    description:
+      The post type URL. This should resolve to a JSON Schema that describes 
+      the data inside `content`.
+    type: string
+    format: uri
+    required: true
+  content:
+    description: The post content.
+    type: object
+    required: true
