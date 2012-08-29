@@ -1,10 +1,11 @@
 title: Tent Post
+$schema: http://json-schema.org/draft-03/schema
 type: object
 properties:
   id:
     description: The unique identifier of the post.
     type: string
-    require: true
+    required: true
   entity:
     description: The entity that published the post.
     type: string
@@ -43,3 +44,32 @@ properties:
     description: The post content.
     type: object
     required: true
+  permissions:
+    description: The permissions that apply to the post.
+    type: object
+    properties:
+      groups:
+        description: The groups that are allowed to view the post.
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              description: The unique identifier of the group.
+              type: string
+              required: true
+            name:
+              description: The name of the group.
+              type: string
+              require: true
+        required: true
+      entities:
+        type: object
+        patternProperties:
+          .*:
+            description:
+              An entity identifier and boolean value that indicates whether the
+              entity is allowed to see the post.
+            type: boolean
+        required: true
+    required: false
