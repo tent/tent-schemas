@@ -41,7 +41,9 @@ properties:
   mac_algorithm:
     description: The MAC algorithm to use when authenticating the app.
     type: string
-    pattern: hmac-sha-\d+
+    enum:
+      - hmac-sha-1
+      - hmac-sha-256
   mac_key_id:
     description: The MAC key identifier to use when authenticating the app.
     type: string
