@@ -23,10 +23,10 @@ properties:
   licenses:
     description: The licenses that the post is released under.
     type: array
+    required: true
     items:
       type: string
       format: uri
-    required: true
   public:
     description:
       Indicates whether the post has been published publicly. Unauthenticated 
@@ -47,10 +47,12 @@ properties:
   permissions:
     description: The permissions that apply to the post.
     type: object
+    required: false
     properties:
       groups:
         description: The groups that are allowed to view the post.
         type: array
+        required: true
         items:
           type: object
           properties:
@@ -62,14 +64,12 @@ properties:
               description: The name of the group.
               type: string
               require: true
-        required: true
       entities:
         type: object
+        required: true
         patternProperties:
           .*:
             description:
               An entity identifier and boolean value that indicates whether the
               entity is allowed to see the post.
             type: boolean
-        required: true
-    required: false
