@@ -4,7 +4,6 @@ properties:
   id:
     description: The unique identifier of the post.
     type: string
-    required: true
   entity:
     description: The entity that published the post.
     type: string
@@ -26,12 +25,6 @@ properties:
     items:
       type: string
       format: uri
-  public:
-    description:
-      Indicates whether the post has been published publicly. Unauthenticated 
-      requests can only see public posts.
-    type: boolean
-    required: true
   type:
     description:
       The post type URL. This should resolve to a JSON Schema that describes 

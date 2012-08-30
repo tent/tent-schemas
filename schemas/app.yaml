@@ -1,0 +1,54 @@
+title: Tent App
+type: object
+properties:
+  id:
+    description: The unique identifier of the app.
+    type: string
+  name:
+    description: The short display name for the app.
+    type: string
+    required: true
+  description:
+    description: The short display description of the app.
+    type: string
+    required: true
+  url:
+    descriptioon: The URL for the home page of the app.
+    type: string
+    format: uri
+    required: true
+  icon:
+    description: The URL to the icon for the app.
+    type: string
+    format: uri
+  redirect_uris:
+    description: 
+      The exact (including parameters) uris that will be used as OAuth
+      `redirect_uri`.
+    type: array
+    required: true
+    items:
+      type: string
+      format: uri
+  scopes:
+    description:
+      All of the scopes that the application will use, and the reason why each
+      is required.
+    required: true
+    patternProperties:
+      .*:
+        type: string
+  mac_algorithm:
+    description: The MAC algorithm to use when authenticating the app.
+    type: string
+    pattern: hmac-sha-\d+
+  mac_key_id:
+    description: The MAC key identifier to use when authenticating the app.
+    type: string
+  mac_key:
+    description: The MAC key to use when authenticating the app.
+    type: string
+dependencies:
+  mac_key:
+    - mac_algorithm
+    - mac_key_id
