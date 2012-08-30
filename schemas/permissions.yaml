@@ -1,0 +1,23 @@
+name: Tent Permissions
+description: The permissions that apply to the instance.
+type: object
+properties:
+  public:
+    description:
+      Indicates whether the instance is public, public instances are available
+      to unauthenticated requests.
+    type: boolean
+    required: true
+  groups:
+    description: The groups that are allowed to view the instance.
+    type: array
+    items:
+      $ref: '#/schemas/group'
+  entities:
+    type: object
+    patternProperties:
+      .*:
+        description:
+          An entity identifier and boolean value that indicates whether the
+          entity is allowed to view the instance.
+        type: boolean

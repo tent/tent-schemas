@@ -1,0 +1,11 @@
+name: Tent Group
+type: object
+properties:
+  id:
+    description: The unique identifier of the group.
+    type: string
+    required: true
+  name:
+    description: The name of the group.
+    type: string
+    require: true

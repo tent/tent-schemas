@@ -14,7 +14,5 @@ task :default => :test
 desc "Generate schema json"
 task :generate do
   FileUtils.mkdir_p('output')
-  TentSchemas.each do |name,schema|
-    File.open("output/#{name}.json", 'w') { |f| f.write(JSON.pretty_generate(schema)) }
-  end
+  File.open("output/schema.json", 'w') { |f| f.write(JSON.pretty_generate(TentSchemas.schema)) }
 end

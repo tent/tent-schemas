@@ -1,5 +1,4 @@
 title: Tent Post
-$schema: http://json-schema.org/draft-03/schema
 type: object
 properties:
   id:
@@ -45,31 +44,4 @@ properties:
     type: object
     required: true
   permissions:
-    description: The permissions that apply to the post.
-    type: object
-    required: false
-    properties:
-      groups:
-        description: The groups that are allowed to view the post.
-        type: array
-        required: true
-        items:
-          type: object
-          properties:
-            id:
-              description: The unique identifier of the group.
-              type: string
-              required: true
-            name:
-              description: The name of the group.
-              type: string
-              require: true
-      entities:
-        type: object
-        required: true
-        patternProperties:
-          .*:
-            description:
-              An entity identifier and boolean value that indicates whether the
-              entity is allowed to see the post.
-            type: boolean
+    $ref: '#/schemas/permissions'

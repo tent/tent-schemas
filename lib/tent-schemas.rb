@@ -20,4 +20,8 @@ module TentSchemas
   def [](k)
     schemas[k]
   end
+
+  def schema
+    { 'schemas' => schemas }
+  end
 end
