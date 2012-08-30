@@ -18,6 +18,22 @@ properties:
       The date/time when the post was received from the publishing server in
       Unix time.
     type: integer
+  mentions:
+    description: The entities and posts that this post mentions.
+    type: array
+    items:
+      type: object
+      properties:
+        entity:
+          description: The entity that is being mentioned.
+          type: string
+          format: uri
+          required: true
+        post:
+          description:
+            The unique post identifier published by the entity that is being
+            mentioned.
+          type: string
   licenses:
     description: The licenses that the post is released under.
     type: array
