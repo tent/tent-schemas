@@ -16,7 +16,7 @@ properties:
   entities:
     type: object
     patternProperties:
-      .*:
+      .+:
         description:
           An entity identifier and boolean value that indicates whether the
           entity is allowed to view the instance.
