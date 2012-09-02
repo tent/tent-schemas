@@ -43,7 +43,7 @@ properties:
       format: uri
   type:
     description:
-      The post type URL. This should resolve to a JSON Schema that describes 
+      The post type URL. This should resolve to a JSON Schema that describes
       the data inside `content`.
     type: string
     format: uri
@@ -52,5 +52,31 @@ properties:
     description: The post content.
     type: object
     required: true
+  attachments:
+    description: Attachments to the post.
+    type: array
+    items:
+      type: object
+      properties:
+        category:
+          description:
+            The category this attachment is in, used to determine what to
+            include in a notification based on views.
+          type: string
+          required: true
+        type:
+          description: The media type of the attachment.
+          type: string
+          required: true
+        name:
+          description:
+            The name of the attachment. The name and media type combination are
+            the unique identifier for the attachment.
+          type: string
+          required: true
+        size:
+          description: The size in bytes of the attachment.
+          type: integer
+          required: true
   permissions:
     $ref: '#/schemas/permissions'
