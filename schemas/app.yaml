@@ -36,7 +36,7 @@ properties:
       is required.
     required: true
     patternProperties:
-      .*:
+      .+:
         type: string
   mac_algorithm:
     description: The MAC algorithm to use when authenticating the app.

@@ -78,5 +78,50 @@ properties:
           description: The size in bytes of the attachment.
           type: integer
           required: true
+  app:
+    description: The application that published the post.
+    type: object
+    properties:
+      name:
+        description: The human readable name of the application.
+        type: string
+      url:
+        description: The URL of the application.
+        type: string
+        format: uri
+  views:
+    description: The available views of the post.
+    type: object
+    patternProperties:
+      .+:
+        type: object
+        properties:
+          content:
+            description:
+              An array of JSON pointers that point to keys inside of `content`
+              that should be included in this view.
+            type: array
+            items:
+              type: string
+          attachments:
+            description:
+              The attachments that should be included when making notifications
+              about this post. The `category`, `name`, and `type` specifier in
+              each object will be combined as an `OR` condition to select
+              attachments.
+            type: array
+            items:
+              type: object
+              properties:
+                category:
+                  description: The category of attachment.
+                  type: string
+                name:
+                  description: The name of the attachment
+                  type: string
+                type:
+                  description: The media type of the attachment.
+                  type: string
+
   permissions:
     $ref: '#/schemas/permissions'
