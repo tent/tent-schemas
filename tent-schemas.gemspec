@@ -14,4 +14,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_runtime_dependency 'json-schema'
+  gem.add_development_dependency 'rake'
 end
