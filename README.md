@@ -1,29 +1,19 @@
-# Tent::Schema
+# Tent Protocol Schemas
 
-TODO: Write a gem description
+This repository contains [JSON Schemas](http://json-schema.org/) for most of the
+[Tent Protocol](http://tent.io). Currently they are used to generate
+documentation examples. In the future they will also contain specifications for
+all API endpoints in Tent so that clients can be implemented/updated
+programmtically.
 
-## Installation
+Tent post and profile info types should also be implemented as JSON schemas, the
+schema for these definitions has yet to be defined.
 
-Add this line to your application's Gemfile:
+## Contributions
 
-    gem 'tent-schema'
+Here are some things that need to be done:
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install tent-schema
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+- Fix errors in the schemas.
+- Implement a version of JSON hyper schemas that defines API endpoints/actions.
+- Write a schema for post type schemas.
+- Write a schema for profile info type schemas.
