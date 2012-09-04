@@ -1,4 +1,4 @@
-# Tent Protocol Schemas
+# Tent Protocol Schemas [![Build Status](https://secure.travis-ci.org/tent/tent-schemas.png)](http://travis-ci.org/tent/tent-schemas)
 
 This repository contains [JSON Schemas](http://json-schema.org/) for most of the
 [Tent Protocol](http://tent.io). Currently they are used to generate
