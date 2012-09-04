@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = 'tent-schemas'
-  gem.version       = '0.1.0'
+  gem.version       = '0.0.1'
   gem.authors       = ['Jonathan Rudenberg']
   gem.email         = ['jonathan@titanous.com']
   gem.description   = 'Tent protocol JSON schemas'
