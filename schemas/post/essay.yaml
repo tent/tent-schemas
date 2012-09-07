@@ -1,0 +1,21 @@
+title: Tent Essay Post
+type: object
+properties:
+  title:
+    description: The title of the post.
+    type: string
+  excerpt:
+    description:
+      An excerpt of the post in HTML format to be displayed when the whole post
+      is not available.
+    type: string
+  body:
+    description:
+      The body of the post in HTML format. Renderers may sanitize some HTML.
+    type: string
+    required: true
+  tags:
+    description: Tags that describe the post.
+    type: array
+    items:
+      type: string

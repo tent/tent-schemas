@@ -1,0 +1,20 @@
+title: Tent Album Post
+type: object
+properties:
+  title:
+    description: The title of the album.
+    type: string
+  description:
+    description: The description of the album.
+    type: string
+  photos:
+    description: The list of Post IDs of photos that the album contains.
+    type: array
+    required: true
+    items:
+      type: string
+  cover:
+    description:
+      The Post ID of a photo that should be used as the cover/display image for
+      the album.
+    type: string

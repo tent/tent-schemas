@@ -1,0 +1,20 @@
+title: Tent Photo Post
+type: object
+properties:
+  caption:
+    description: A caption that describes the photo.
+    type: string
+  albums:
+    description:
+      A list of the Post IDs of albums that this photo belongs to.
+    type: array
+    items:
+      type: string
+  tags:
+    description: A list of tags that describe this photo.
+    type: array
+    items:
+      type: string
+  exif:
+    description: The EXIF data that describes the photo.
+    type: object

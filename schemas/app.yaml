@@ -13,7 +13,7 @@ properties:
     type: string
     required: true
   url:
-    descriptioon: The URL for the home page of the app.
+    description: The URL for the home page of the app.
     type: string
     format: uri
     required: true
@@ -35,6 +35,7 @@ properties:
       All of the scopes that the application will use, and the reason why each
       is required.
     required: true
+    type: object
     patternProperties:
       .+:
         type: string

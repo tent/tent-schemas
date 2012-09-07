@@ -1,0 +1,20 @@
+title: Core Profile Info
+type: object
+properties:
+  entity:
+    description: The canonical entity identitifier.
+    type: string
+    format: uri
+  licenses:
+    description: The licenses the entity publishes content under.
+    type: array
+    items:
+      type: string
+      format: uri
+  servers:
+    description:
+      The canonical API roots that can be used to interact with the entity.
+    type: array
+    item:
+      type: string
+      format: uri

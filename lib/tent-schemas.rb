@@ -4,12 +4,15 @@ module TentSchemas
   extend self
 
   def schema_files
-    Dir.glob(File.expand_path('../../schemas/*', __FILE__))
+    Dir.glob(File.expand_path('../../schemas/**/*.yaml', __FILE__))
   end
 
   def schemas
     @schemas ||= schema_files.inject(Hash.new { |h,k| h[k.to_s] }) { |hash,schema|
-      hash.merge(File.basename(schema, '.yaml') => YAML.load(File.read(schema)))
+      schema_name = File.basename(schema, '.yaml')
+      schema_directory = File.basename(File.dirname(schema))
+      schema_name = [schema_directory, schema_name].join('_') if schema_directory != 'schemas'
+      hash.merge( schema_name => YAML.load(File.read(schema)))
     }
   end
 
