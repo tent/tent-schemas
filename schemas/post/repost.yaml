@@ -1,0 +1,12 @@
+title: Tent Repost
+type: object
+properties:
+  entity:
+    description: The entity that is being reposted.
+    type: string
+    format: uri
+    required: true
+  id:
+    description: The post identifier that is being reposted.
+    type: string
+    required: true

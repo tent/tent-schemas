@@ -1,0 +1,7 @@
+title: Tent Deletion Post
+type: object
+properties:
+  id:
+    description: The identifier of the post that was deleted.
+    type: string
+    required: true
