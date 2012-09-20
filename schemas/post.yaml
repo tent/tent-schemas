@@ -42,9 +42,7 @@ properties:
       type: string
       format: uri
   type:
-    description:
-      The post type URL. This should resolve to a JSON Schema that describes
-      the data inside `content`.
+    description: The post type URL.
     type: string
     format: uri
     required: true
