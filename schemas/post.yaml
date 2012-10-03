@@ -8,11 +8,9 @@ properties:
     description: The entity that published the post.
     type: string
     format: uri
-    required: true
   published_at:
     description: The date/time when the post was published in Unix time.
     type: integer
-    required: true
   received_at:
     description:
       The date/time when the post was received from the publishing server in
@@ -37,7 +35,6 @@ properties:
   licenses:
     description: The licenses that the post is released under.
     type: array
-    required: true
     items:
       type: string
       format: uri
