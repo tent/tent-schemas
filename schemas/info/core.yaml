@@ -5,9 +5,11 @@ properties:
     description: The canonical entity identitifier.
     type: string
     format: uri
+    required: true
   licenses:
     description: The licenses the entity publishes content under.
     type: array
+    required: true
     items:
       type: string
       format: uri
@@ -15,6 +17,7 @@ properties:
     description:
       The canonical API roots that can be used to interact with the entity.
     type: array
+    required: true
     item:
       type: string
       format: uri
