@@ -18,6 +18,6 @@ properties:
       The canonical API roots that can be used to interact with the entity.
     type: array
     required: true
-    item:
+    items:
       type: string
       format: uri
