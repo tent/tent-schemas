@@ -7,7 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    json-schema (1.0.9)
+    json-schema (1.0.10)
     rake (0.9.2.2)
 
 PLATFORMS
