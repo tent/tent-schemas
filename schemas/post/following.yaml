@@ -1,0 +1,16 @@
+title: Tent Following Post
+type: object
+properties:
+  id:
+    description: The identifier of the following.
+    type: string
+    required: true
+  entity:
+    description: The entity URL of the following.
+    type: string
+    format: uri
+    required: true
+  action:
+    description: The action performed on the following. One of `create` or `delete`.
+    type: string
+    required: true
