@@ -4,7 +4,7 @@ properties:
   text:
     description: The status text.
     type: string
-    maxLength: 140
+    maxLength: 256
   location:
     description: The GeoJSON Point from which the post originated.
     type: object
