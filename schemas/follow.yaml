@@ -4,6 +4,9 @@ properties:
   id:
     description: The unique identifier of the follow.
     type: string
+  created_at:
+    description: The date/time when the follow was created in Unix time.
+    type: integer
   entity:
     description: The entity that the follow refers to.
     type: string

@@ -4,6 +4,9 @@ properties:
   id:
     description: The unique identifier of the app.
     type: string
+  created_at:
+    description: The date/time when the app was created in Unix time.
+    type: integer
   name:
     description: The short display name for the app.
     type: string
