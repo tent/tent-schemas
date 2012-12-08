@@ -6,6 +6,10 @@ properties:
     type: string
     format: uri
     required: true
+  tent_version:
+    description: The latest Tent protocol version supported by listed servers.
+    type: string
+    required: true
   licenses:
     description: The licenses the entity publishes content under.
     type: array
