@@ -1,11 +1,11 @@
 title: Cursor
 type: object
 properties:
-  post_id:
+  post:
     description: The post identifier.
     type: string
     required: true
-  post_entity:
+  entity:
     description: The canonical entity identitifier.
     type: string
     format: uri
