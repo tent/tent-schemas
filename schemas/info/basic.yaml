@@ -8,6 +8,10 @@ properties:
     description: URL to avatar to be displayed publicly.
     type: string
     format: uri
+  website_url:
+    description: The entity's primary website
+    type: string
+    format: uri
   birthdate:
     description: "Date of birth in one of these formats: `YYYY-MM-DD`, `YYYY-MM`, `MM-DD`"
     type: string
