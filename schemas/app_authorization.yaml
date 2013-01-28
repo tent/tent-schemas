@@ -67,4 +67,4 @@ dependencies:
   access_token:
     - mac_algorithm
     - token_type
-    - mac_key_id
+    - mac_key
