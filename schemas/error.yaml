@@ -1,0 +1,7 @@
+name: Tent Error
+type: object
+properties:
+  description:
+    description: Short description of error.
+    type: string
+    require: true
