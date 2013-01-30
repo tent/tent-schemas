@@ -1,0 +1,37 @@
+title: Tent Following
+type: object
+properties:
+  entity:
+    description: The entity URI that is being followed.
+    type: string
+    format: uri
+    required: true
+  id:
+    description: The unique identifier of the following.
+    type: string
+  remote_id:
+    description: The unique identifier of the corresponding follower record on the server being followed.
+  created_at:
+    description: The date/time when the following was created in Unix time.
+    type: integer
+  updated_at:
+    description: The date/time when the following was last updated in Unix time.
+    type: integer
+  permissions:
+    $ref: '#/schemas/permissions'
+  profile:
+    $ref: '#/schemas/profile'
+  licenses:
+    description: The licenses that the following relationship supports.
+    type: array
+    items:
+      type: string
+      format: uri
+dependencies:
+  id:
+    - remote_id
+    - created_at
+    - updated_at
+    - permissions
+    - profile
+    - licenses
