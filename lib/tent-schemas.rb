@@ -8,7 +8,7 @@ module TentSchemas
   end
 
   def schemas
-    @schemas ||= schema_files.inject(Hash.new { |h,k| h[k.to_s] }) { |hash,schema|
+    @schemas ||= schema_files.inject(Hash.new { |h,k| h.has_key?(k.to_s) ? h[k.to_s] : nil }) { |hash,schema|
       schema_name = File.basename(schema, '.yaml')
       schema_directory = File.basename(File.dirname(schema))
       schema_name = [schema_directory, schema_name].join('_') if schema_directory != 'schemas'
