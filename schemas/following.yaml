@@ -21,12 +21,35 @@ properties:
     $ref: '#/schemas/permissions'
   profile:
     $ref: '#/schemas/profile'
+  groups:
+    description: The groups that the follow is in.
+    type: array
+    items:
+      $ref: '#/schemas/group'
+  types:
+    description: The types the follow is subscribed to notifications for.
+    type: array
+    items:
+      type: string
+      format: uri
   licenses:
     description: The licenses that the following relationship supports.
     type: array
     items:
       type: string
       format: uri
+  mac_algorithm:
+    description: The MAC algorithm to use when authenticating the follow.
+    type: string
+    enum:
+      - hmac-sha-1
+      - hmac-sha-256
+  mac_key_id:
+    description: The MAC key identifier to use when authenticating the follow.
+    type: string
+  mac_key:
+    description: The MAC key to use when authenticating the follow.
+    type: string
 dependencies:
   id:
     - remote_id
@@ -35,3 +58,7 @@ dependencies:
     - permissions
     - profile
     - licenses
+  mac_key:
+    - mac_algorithm
+    - mac_key_id
+
