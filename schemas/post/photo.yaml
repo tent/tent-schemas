@@ -15,6 +15,25 @@ properties:
     type: array
     items:
       type: string
-  exif:
-    description: The EXIF data that describes the photo.
+  source:
+    description:
+      The URL of the author of the image for attribution purposes.
+      Can be a Tent entity or external site.
+    type: string
+  location:
+    description: The GeoJSON Point for the place the photo was taken.
     type: object
+    properties:
+      type:
+        description: The GeoJSON Object type.  Currently only `Point` is supported.
+        type: string
+      coordinates:
+        description: The longitude, latitude pair.
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          type: number
+  captured_at:
+    description: The date/time when the photo was taken in Unix time.
+    type: integer
