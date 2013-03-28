@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |gem|
   gem.name          = 'tent-schemas'
-  gem.version       = '0.0.1'
-  gem.authors       = ['Jonathan Rudenberg']
-  gem.email         = ['jonathan@titanous.com']
+  gem.version       = '0.2.0'
+  gem.authors       = ['Jonathan Rudenberg', 'Jesse Stuart']
+  gem.email         = ['jonathan@titanous.com', 'jesse@jessestuart.ca']
   gem.description   = 'Tent protocol JSON schemas'
   gem.summary       = 'Tent protocol JSON schemas'
-  gem.homepage      = 'http://tent.io'
+  gem.homepage      = 'https://tent.io'
 
   gem.files         = `git ls-files`.split($/)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})

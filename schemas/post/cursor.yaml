@@ -1,0 +1,15 @@
+title: Tent Cursor Post
+type: object
+properties:
+  entity:
+    description: The entity of post.
+    type: string
+    format: uri
+    required: true
+  post:
+    description: The post identifier.
+    type: string
+    required: true
+  version:
+    description: The post version identifier.
+    type: string

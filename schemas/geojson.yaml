@@ -1,0 +1,14 @@
+name: Tent GeoJSON
+description: The GeoJSON Point from which the instance originated.
+type: object
+properties:
+  type:
+    description: The GeoJSON Object type, currently only `Point` is supported.
+    type: string
+  coordinates:
+    description: The longitude, latitude pair.
+    type: array
+    minItems: 2
+    maxItems: 2
+    items:
+      type: number

@@ -1,0 +1,7 @@
+title: Tent Tag Post
+type: object
+properties:
+  name:
+    description: Name of tag.
+  description:
+    description: Description of tag.

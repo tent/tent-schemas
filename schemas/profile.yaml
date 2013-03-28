@@ -1,6 +1,0 @@
-title: Tent Profile
-type: object
-patternProperties:
-  .+:
-    description: A profile info type and its contents.
-    type: object

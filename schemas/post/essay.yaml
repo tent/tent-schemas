@@ -14,8 +14,3 @@ properties:
       The body of the post in HTML format. Renderers may sanitize some HTML.
     type: string
     required: true
-  tags:
-    description: Tags that describe the post.
-    type: array
-    items:
-      type: string
