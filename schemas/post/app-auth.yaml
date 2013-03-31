@@ -4,9 +4,11 @@ properties:
   post_types:
     description: List of authorized type uris.
     type: object
+    required: true
     properties:
       read:
         description: List of type uris authorized for consuming.
+        required: true
         type: array
         items:
           type: string
@@ -14,11 +16,13 @@ properties:
       write:
         description: List of type uris authorized for manipulation.
         type: array
+        required: true
         items:
           type: string
           format: uri
   scopes:
     description: List of authorized scopes.
     type: array
+    required: true
     items:
       type: string
