@@ -26,6 +26,12 @@ properties:
     description: URL app expects to receive post notifications.
     type: string
     format: uri
+  notification_types:
+    description: List of type uris app wants to receive. Set to a single member `all` to receive posts of all types.
+    type: array
+    items:
+      type: string
+      format: uri
   post_types:
     description: List of authorized type uris.
     type: object
