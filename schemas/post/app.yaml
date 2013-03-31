@@ -22,6 +22,23 @@ properties:
     description: The exact (including parameters) uri that will be used as OAuth `redirect_uri`.
     type: string
     format: uri
+  notification_url:
+    description: URL app expects to receive post notifications.
+    type: string
+    format: uri
+  properties:
+    read:
+      description: List of type uris the app wants to consume.
+      type: array
+      items:
+        type: string
+        format: uri
+    write:
+      description: List of type uris the app wants to manipulate.
+      type: array
+      items:
+        type: string
+        format: uri
   scopes:
     description:
       All of the scopes that the application will use, and the reason why each is required.
