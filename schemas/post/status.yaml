@@ -7,4 +7,15 @@ properties:
     maxLength: 256
   location:
     $ref: '#/schemas/geojson'
+  media:
+    description:
+    type: object
+    properties:
+      post:
+        description: Identifier of media post created by the containing post's entity.
+        type: string
+      type:
+        description: Type URI of media post.
+        type: string
+        format: uri
 
