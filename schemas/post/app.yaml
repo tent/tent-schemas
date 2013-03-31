@@ -46,7 +46,6 @@ properties:
     description:
       All of the scopes that the application will use, and the reason why each is required.
     required: true
-    type: object
-    patternProperties:
-      .+:
-        type: string
+    type: array
+    items:
+      type: string
