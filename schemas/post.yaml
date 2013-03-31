@@ -8,14 +8,56 @@ properties:
     description: The entity that published the post.
     type: string
     format: uri
+  original_entity:
+    description: Original entity of parent post. Should only be present if the value of entity changed.
+    type: string
+    format: uri
   published_at:
-    description: The date/time when the post was published in Unix time.
+    description: The date/time when the post was published in milliseconds since Unix epoch.
     type: integer
   received_at:
     description:
-      The date/time when the post was received from the publishing server in
-      Unix time.
+      The date/time when the post was received from the publishing server in milliseconds since Unix epoch.
     type: integer
+  version:
+    description: Post Version object.
+    type: object
+    required: true
+    properties:
+      id:
+        description: Post version identifier.
+        type: string
+        required: true
+      parents:
+        description: Perent versions.
+        type: array
+        items:
+          type: object
+          properties:
+            version:
+              description: Post version identifier.
+              type: string
+            entity:
+              description: Entity of parent post. Should only be present if different than containing post entity.
+              type: string
+              format: uri
+            original_entity:
+              description: Original entity of parent post. Should only be present if the value of entity changed.
+              type: string
+              format: uri
+            post:
+              description: Identifier of parent post. Should only be present if different than containing post identifier.
+              type: string
+        published_at:
+          description: The date/time when post version was published in milliseconds since Unix epoch.
+          type: integer
+          required: true
+        received_at:
+          description: The date/time when the post version was received from the publishing server in milliseconds since Unix epoch.
+          type: integer
+        message:
+          description: Optional message describing changes made.
+          type: string
   mentions:
     description: The entities and posts that this post mentions.
     type: array
@@ -32,12 +74,26 @@ properties:
             The unique post identifier published by the entity that is being
             mentioned.
           type: string
+        version:
+          description:
+          type: string
+        type:
+          description: Type URI of referenced post. Should only be set when post is public or mention is private.
+          type: string
+        public:
+          description: Indicates whether mention is public or private. Default is public.
+          type: boolean
   licenses:
     description: The licenses that the post is released under.
     type: array
     items:
-      type: string
-      format: uri
+      type: object
+      properties:
+        url:
+          description: URL of license
+          type: string
+          format: uri
+          required: true
   type:
     description: The post type URL.
     type: string
@@ -77,6 +133,9 @@ properties:
     description: The application that published the post.
     type: object
     properties:
+      id:
+        description: Identifier of the post that is the app responsible for creating this post.
+        type: string
       name:
         description: The human readable name of the application.
         type: string
@@ -84,39 +143,6 @@ properties:
         description: The URL of the application.
         type: string
         format: uri
-  views:
-    description: The available views of the post.
-    type: object
-    patternProperties:
-      .+:
-        type: object
-        properties:
-          content:
-            description:
-              An array of JSON pointers that point to keys inside of `content`
-              that should be included in this view.
-            type: array
-            items:
-              type: string
-          attachments:
-            description:
-              The attachments that should be included when making notifications
-              about this post. The `category`, `name`, and `type` specifier in
-              each object will be combined as an `OR` condition to select
-              attachments.
-            type: array
-            items:
-              type: object
-              properties:
-                category:
-                  description: The category of attachment.
-                  type: string
-                name:
-                  description: The name of the attachment
-                  type: string
-                type:
-                  description: The media type of the attachment.
-                  type: string
 
   permissions:
     $ref: '#/schemas/permissions'

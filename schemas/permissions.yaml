@@ -1,7 +1,6 @@
 name: Tent Permissions
-description: The permissions that apply to the instance.
+description: The permissions that apply to the instance. Should be omitted if public member is true.
 type: object
-required: true
 properties:
   public:
     description:
@@ -13,12 +12,14 @@ properties:
     description: The groups that are allowed to view the instance.
     type: array
     items:
-      $ref: '#/schemas/group'
+      type: object
+      properties:
+        post:
+          description: Post identifier of group.
+          type: string
+          required: true
   entities:
-    type: object
-    patternProperties:
-      .+:
-        description:
-          An entity identifier and boolean value that indicates whether the
-          entity is allowed to view the instance.
-        type: boolean
+    type: array
+    items:
+      type: string
+      format: uri
