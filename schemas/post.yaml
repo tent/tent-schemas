@@ -28,6 +28,13 @@ properties:
         description: Post version identifier.
         type: string
         required: true
+      published_at:
+        description: The date/time when post version was published in milliseconds since Unix epoch.
+        type: integer
+        required: true
+      received_at:
+        description: The date/time when the post version was received from the publishing server in milliseconds since Unix epoch.
+        type: integer
       parents:
         description: Perent versions.
         type: array
