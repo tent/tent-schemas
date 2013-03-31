@@ -1,0 +1,7 @@
+title: Tent Relationship Post
+type: object
+properties:
+  entity:
+    description: Entity URI
+    type: string
+    format: uri
