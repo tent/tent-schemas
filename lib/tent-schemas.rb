@@ -27,4 +27,16 @@ module TentSchemas
   def schema
     { 'schemas' => schemas }
   end
+
+  def inject_refs!(hash)
+    hash.each_pair do |key, val|
+      if Hash === val
+        if val["$ref"]
+          hash[key] = schemas[val["$ref"].sub(/\A#\/schemas\//, '')]
+        else
+          inject_refs!(val)
+        end
+      end
+    end
+  end
 end
