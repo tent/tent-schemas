@@ -62,27 +62,7 @@ properties:
     description: The entities and posts that this post mentions.
     type: array
     items:
-      type: object
-      properties:
-        entity:
-          description: The entity that is being mentioned.
-          type: string
-          format: uri
-          required: true
-        post:
-          description:
-            The unique post identifier published by the entity that is being
-            mentioned.
-          type: string
-        version:
-          description:
-          type: string
-        type:
-          description: Type URI of referenced post. Should only be set when post is public or mention is private.
-          type: string
-        public:
-          description: Indicates whether mention is public or private. Default is public.
-          type: boolean
+      $ref: '#/schemas/mention'
   licenses:
     description: The licenses that the post is released under.
     type: array

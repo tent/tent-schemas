@@ -8,7 +8,7 @@ properties:
   location:
     $ref: '#/schemas/geojson'
   media:
-    description:
+    description: Reference to a media post of high relevance to the post content.
     type: object
     properties:
       post:
