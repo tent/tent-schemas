@@ -4,10 +4,12 @@ properties:
   id:
     description: The unique identifier of the post.
     type: string
+    required: true
   entity:
     description: The entity that published the post.
     type: string
     format: uri
+    required: true
   original_entity:
     description: Original entity of parent post. Should only be present if the value of entity changed.
     type: string
@@ -15,6 +17,7 @@ properties:
   published_at:
     description: The date/time when the post was published in milliseconds since Unix epoch.
     type: integer
+    required: true
   received_at:
     description:
       The date/time when the post was received from the publishing server in milliseconds since Unix epoch.
@@ -89,7 +92,6 @@ properties:
   content:
     description: The post content.
     type: object
-    required: true
   attachments:
     description: Attachments to the post.
     type: array
