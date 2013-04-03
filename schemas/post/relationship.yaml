@@ -5,3 +5,4 @@ properties:
     description: Entity URI
     type: string
     format: uri
+    required: true
