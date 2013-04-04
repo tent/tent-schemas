@@ -14,10 +14,6 @@ properties:
     type: string
     format: uri
     required: true
-  icon:
-    description: The URL to the icon for the app.
-    type: string
-    format: uri
   redirect_uri:
     description: The exact (including parameters) uri that will be used as OAuth `redirect_uri`.
     type: string
