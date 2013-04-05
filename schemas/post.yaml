@@ -102,7 +102,7 @@ properties:
             include in a notification based on views.
           type: string
           required: true
-        type:
+        content_type:
           description: The media type of the attachment.
           type: string
           required: true
