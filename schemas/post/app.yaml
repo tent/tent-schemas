@@ -1,5 +1,6 @@
 title: Tent App Post
 type: object
+additionalProperties: false
 properties:
   name:
     description: The short display name for the app.
@@ -31,6 +32,7 @@ properties:
   post_types:
     description: List of authorized type uris.
     type: object
+    additionalProperties: false
     properties:
       read:
         description: List of type uris the app wants to consume.

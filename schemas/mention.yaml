@@ -1,5 +1,6 @@
 title: Tent Post Mentions Member
 type: object
+additionalProperties: false
 properties:
   entity:
     description: The entity that is being mentioned.

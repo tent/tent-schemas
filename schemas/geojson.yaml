@@ -1,6 +1,7 @@
 name: Tent GeoJSON
 description: The GeoJSON Point from which the instance originated.
 type: object
+additionalProperties: false
 properties:
   type:
     description: The GeoJSON Object type, currently only `Point` is supported.

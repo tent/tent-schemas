@@ -1,5 +1,6 @@
 title: Tent Repost
 type: object
+additionalProperties: false
 properties:
   entity:
     description: The entity that is being reposted.

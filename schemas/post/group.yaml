@@ -1,5 +1,6 @@
 title: Tent Group Post
 type: object
+additionalProperties: false
 properties:
   name:
     description: Name of group.

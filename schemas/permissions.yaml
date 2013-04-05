@@ -1,6 +1,7 @@
 name: Tent Permissions
 description: The permissions that apply to the instance. Should be omitted if public member is true.
 type: object
+additionalProperties: false
 properties:
   public:
     description:
@@ -13,6 +14,7 @@ properties:
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         post:
           description: Post identifier of group.

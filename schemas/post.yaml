@@ -1,5 +1,6 @@
 title: Tent Post
 type: object
+additionalProperties: false
 properties:
   id:
     description: The unique identifier of the post.
@@ -26,6 +27,7 @@ properties:
     description: Post Version object.
     type: object
     required: true
+    additionalProperties: false
     properties:
       id:
         description: Post version identifier.
@@ -43,6 +45,7 @@ properties:
         type: array
         items:
           type: object
+          additionalProperties: false
           properties:
             version:
               description: Post version identifier.
@@ -78,6 +81,7 @@ properties:
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         url:
           description: URL of license
@@ -97,6 +101,7 @@ properties:
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         category:
           description:
@@ -121,6 +126,7 @@ properties:
   app:
     description: The application that published the post.
     type: object
+    additionalProperties: false
     properties:
       id:
         description: Identifier of the post that is the app responsible for creating this post.

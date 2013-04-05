@@ -1,5 +1,6 @@
 title: Tent Status Post
 type: object
+additionalProperties: false
 properties:
   text:
     description: The status text.
@@ -10,6 +11,7 @@ properties:
   media:
     description: Reference to a media post of high relevance to the post content.
     type: object
+    additionalProperties: false
     properties:
       post:
         description: Identifier of media post created by the containing post's entity.

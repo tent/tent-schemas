@@ -2,6 +2,7 @@ title: Tent Deletion Post
 type: array
 items:
   type: object
+  additionalProperties: false
   properties:
     post:
       description: The identifier of the post that was deleted.

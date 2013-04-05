@@ -1,5 +1,6 @@
 title: Tent Cursor Post
 type: object
+additionalProperties: false
 properties:
   entity:
     description: The entity of post.

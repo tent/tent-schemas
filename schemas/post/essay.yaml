@@ -1,5 +1,6 @@
 title: Tent Essay Post
 type: object
+additionalProperties: false
 properties:
   title:
     description: The title of the post.

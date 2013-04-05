@@ -1,5 +1,6 @@
 title: Tent Photo Post
 type: object
+additionalProperties: false
 properties:
   location:
     $ref: '#/schemas/geojson'

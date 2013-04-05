@@ -1,9 +1,11 @@
 title: Tent App Auth Post
 type: object
+additionalProperties: false
 properties:
   post_types:
     description: List of authorized type uris.
     type: object
+    additionalProperties: false
     required: true
     properties:
       read:

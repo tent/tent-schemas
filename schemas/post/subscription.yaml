@@ -1,11 +1,13 @@
 title: Tent Subscription Post
 type: object
+additionalProperties: false
 properties:
   types:
     description: List of types to be subscribed to.
     type: array
     items:
       type: object
+      additionalProperties: false
       properties:
         type:
           description: Type URI to be subscribed to.
