@@ -61,13 +61,6 @@ properties:
             post:
               description: Identifier of parent post. Should only be present if different than containing post identifier.
               type: string
-        published_at:
-          description: The date/time when post version was published in milliseconds since Unix epoch.
-          type: integer
-          required: true
-        received_at:
-          description: The date/time when the post version was received from the publishing server in milliseconds since Unix epoch.
-          type: integer
         message:
           description: Optional message describing changes made.
           type: string
