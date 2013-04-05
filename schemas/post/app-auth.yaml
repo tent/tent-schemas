@@ -7,10 +7,12 @@ properties:
     type: object
     additionalProperties: false
     required: true
+    app_required: true
     properties:
       read:
         description: List of type uris authorized for consuming.
         required: true
+        app_required: true
         type: array
         items:
           type: string
@@ -19,6 +21,7 @@ properties:
         description: List of type uris authorized for manipulation.
         type: array
         required: true
+        app_required: true
         items:
           type: string
           format: uri
@@ -26,5 +29,6 @@ properties:
     description: List of authorized scopes.
     type: array
     required: true
+    app_required: true
     items:
       type: string

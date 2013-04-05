@@ -4,5 +4,11 @@ additionalProperties: false
 properties:
   name:
     description: Name of tag.
+    type: string
+    required: true
+    app_required: true
   description:
     description: Description of tag.
+    type: string
+    required: false
+    app_required: false

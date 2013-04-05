@@ -8,10 +8,14 @@ properties:
       Indicates whether the instance is public, public instances are available
       to unauthenticated requests.
     type: boolean
+    default: false
     required: true
+    app_required: false
   groups:
     description: The groups that are allowed to view the instance.
     type: array
+    required: false
+    app_required: false
     items:
       type: object
       additionalProperties: false
@@ -20,8 +24,11 @@ properties:
           description: Post identifier of group.
           type: string
           required: true
+          app_required: true
   entities:
     type: array
+    required: false
+    app_required: false
     items:
       type: string
       format: uri

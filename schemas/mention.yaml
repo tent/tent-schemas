@@ -7,6 +7,12 @@ properties:
     type: string
     format: uri
     required: true
+  original_entity:
+    description: The original entity that is being mentioned. Only present if the entity moved.
+    type: string
+    format: uri
+    required: false
+    app_required: import
   post:
     description:
       The unique post identifier published by the entity that is being

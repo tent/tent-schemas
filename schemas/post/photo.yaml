@@ -3,10 +3,14 @@ type: object
 additionalProperties: false
 properties:
   location:
-    $ref: '#/schemas/geojson'
+    $ref: '#/schemas/location'
   caption:
     description: A caption that describes the photo.
     type: string
+    required: false
+    app_required: false
   exif:
     description: The EXIF data that describes the photo.
     type: object
+    required: false
+    app_required: false

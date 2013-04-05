@@ -1,0 +1,15 @@
+name: Tent Location
+description: The Latitude/Longitude Point from which the instance originated.
+type: object
+additionalProperties: false
+properties:
+  lat:
+    description: The latitude
+    type: string
+    required: true
+    app_required: true
+  lon:
+    description: The longitude
+    type: string
+    required: true
+    app_required: true

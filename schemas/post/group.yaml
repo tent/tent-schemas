@@ -6,7 +6,9 @@ properties:
     description: Name of group.
     type: string
     required: true
+    app_required: true
   description:
     description: Description of group.
     type: string
-    required: true
+    required: false
+    app_required: false
