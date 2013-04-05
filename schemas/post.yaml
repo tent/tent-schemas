@@ -112,6 +112,10 @@ properties:
             the unique identifier for the attachment.
           type: string
           required: true
+        digest:
+          description: SHA-512 hash of data truncated to 256 bits.
+          type: string
+          required: true
         size:
           description: The size in bytes of the attachment.
           type: integer
