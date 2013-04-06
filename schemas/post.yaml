@@ -53,7 +53,7 @@ properties:
         required: false
         app_required: import
       parents:
-        description: Perent versions.
+        description: Parent versions.
         type: array
         required: false
         app_required: false
