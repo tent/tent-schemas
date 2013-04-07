@@ -200,20 +200,20 @@ properties:
         type: string
         format: uri
   permissions:
-    description: The permissions that apply to the instance. Should be omitted if public member is true.
+    description: The permissions that apply to the post. Should be omitted if public member is true.
     type: object
     additionalProperties: false
     properties:
       public:
         description:
-          Indicates whether the instance is public, public instances are available
+          Indicates whether the post is public, public posts are available
           to unauthenticated requests.
         type: boolean
         default: false
         required: true
         app_required: false
       groups:
-        description: The groups that are allowed to view the instance.
+        description: The groups that are allowed to view the post.
         type: array
         required: false
         app_required: false
