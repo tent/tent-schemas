@@ -18,7 +18,6 @@ properties:
     type: string
     format: uri
     required: false
-    app_required: import
   published_at:
     description: The date/time when the post was published in milliseconds since Unix epoch.
     type: integer
@@ -94,7 +93,34 @@ properties:
     required: false
     app_required: false
     items:
-      $ref: '#/schemas/mention'
+      type: object
+      additionalProperties: false
+      properties:
+        entity:
+          description: The entity that is being mentioned.
+          type: string
+          format: uri
+          required: true
+        original_entity:
+          description: The original entity that is being mentioned. Only present if the entity moved.
+          type: string
+          format: uri
+          required: false
+          app_required: import
+        post:
+          description:
+            The unique post identifier published by the entity that is being
+            mentioned.
+          type: string
+        version:
+          description: A version identifier of the post that is being mentioned.
+          type: string
+        type:
+          description: Type URI of referenced post. Should only be set when post is public or mention is private.
+          type: string
+        public:
+          description: Indicates whether mention is public or private. Default is public.
+          type: boolean
   licenses:
     description: The licenses that the post is released under.
     type: array
@@ -173,6 +199,37 @@ properties:
         description: The URL of the application.
         type: string
         format: uri
-
   permissions:
-    $ref: '#/schemas/permissions'
+    description: The permissions that apply to the instance. Should be omitted if public member is true.
+    type: object
+    additionalProperties: false
+    properties:
+      public:
+        description:
+          Indicates whether the instance is public, public instances are available
+          to unauthenticated requests.
+        type: boolean
+        default: false
+        required: true
+        app_required: false
+      groups:
+        description: The groups that are allowed to view the instance.
+        type: array
+        required: false
+        app_required: false
+        items:
+          type: object
+          additionalProperties: false
+          properties:
+            post:
+              description: Post identifier of group.
+              type: string
+              required: true
+              app_required: true
+      entities:
+        type: array
+        required: false
+        app_required: false
+        items:
+          type: string
+          format: uri
