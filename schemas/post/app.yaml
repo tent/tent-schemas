@@ -30,7 +30,7 @@ properties:
     format: uri
     required: false
     app_required: false
-  notification_types:
+  notification_post_types:
     description: List of type uris app wants to receive. Set to a single member `all` to receive posts of all types.
     type: array
     required: false
