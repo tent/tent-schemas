@@ -1,12 +1,30 @@
 title: Tent Repost
 type: object
+additionalProperties: false
 properties:
   entity:
     description: The entity that is being reposted.
     type: string
     format: uri
     required: true
-  id:
+  original_entity:
+    description: The original entity that is being reposted. Only present if entity moved.
+    type: string
+    format: uri
+    required: false
+    app_required: import
+  post:
     description: The post identifier that is being reposted.
     type: string
     required: true
+    app_required: true
+  type:
+    description: The post type URL that is being reposted.
+    type: string
+    required: true
+    app_required: true
+  version:
+    description: The post version identifier that is being reposted.
+    type: string
+    required: false
+    app_required: false

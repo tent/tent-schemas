@@ -1,0 +1,34 @@
+title: Tent App Auth Post
+type: object
+additionalProperties: false
+properties:
+  post_types:
+    description: List of authorized type uris.
+    type: object
+    additionalProperties: false
+    required: true
+    app_required: true
+    properties:
+      read:
+        description: List of type uris authorized for consuming.
+        required: true
+        app_required: true
+        type: array
+        items:
+          type: string
+          format: uri
+      write:
+        description: List of type uris authorized for manipulation.
+        type: array
+        required: true
+        app_required: true
+        items:
+          type: string
+          format: uri
+  scopes:
+    description: List of authorized scopes.
+    type: array
+    required: true
+    app_required: true
+    items:
+      type: string

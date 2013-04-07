@@ -1,20 +1,47 @@
 title: Tent Album Post
 type: object
+additionalProperties: false
 properties:
   title:
     description: The title of the album.
     type: string
+    required: true
+    app_required: true
   description:
     description: The description of the album.
     type: string
+    required: false
+    app_required: false
   photos:
     description: The list of Post IDs of photos that the album contains.
     type: array
     required: true
+    app_required: false
     items:
       type: string
   cover:
-    description:
-      The Post ID of a photo that should be used as the cover/display image for
-      the album.
-    type: string
+    description: The cover/display image for the album.
+    required: false
+    app_required: false
+    type: object
+    properties:
+      post:
+        description: The post identifier of a photo.
+        type: string
+        required: true
+      version:
+        description: The version identifier of the photo post.
+        type: string
+        required: false
+      entity:
+        description: The entity of the photo post. Only present if different from album post entity.
+        type: string
+        format: uri
+        required: false
+        app_required: false
+      original_entity:
+        description: The original entity of the photo post. Only present if entity moved.
+        type: string
+        format: uri
+        required: false
+        app_required: false

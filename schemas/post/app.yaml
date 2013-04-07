@@ -1,0 +1,73 @@
+title: Tent App Post
+type: object
+additionalProperties: false
+properties:
+  name:
+    description: The short display name for the app.
+    type: string
+    required: true
+    app_required: true
+  description:
+    description: The short display description of the app.
+    type: string
+    required: true
+    app_required: true
+  url:
+    description: The URL for the home page of the app.
+    type: string
+    format: uri
+    required: true
+    app_required: true
+  redirect_uri:
+    description: The exact (including parameters) uri that will be used as OAuth `redirect_uri`.
+    type: string
+    format: uri
+    required: false
+    app_required: false
+  notification_url:
+    description: URL app expects to receive post notifications.
+    type: string
+    format: uri
+    required: false
+    app_required: false
+  notification_post_types:
+    description: List of type uris app wants to receive. Set to a single member `all` to receive posts of all types.
+    type: array
+    required: false
+    app_required: false
+    items:
+      type: string
+      format: uri
+  post_types:
+    description: List of authorized type uris.
+    type: object
+    required: false
+    app_required: false
+    additionalProperties: false
+    properties:
+      read:
+        description: List of type uris the app wants to consume.
+        type: array
+        required: false
+        app_required: false
+        items:
+          type: string
+          format: uri
+      write:
+        description: List of type uris the app wants to manipulate.
+        type: array
+        required: false
+        app_required: false
+        items:
+          type: string
+          format: uri
+  scopes:
+    description:
+      All of the scopes that the application will use, and the reason why each is required.
+    required: true
+    type: array
+    required: false
+    app_required: false
+    items:
+      type: string
+

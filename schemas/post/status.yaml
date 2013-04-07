@@ -1,22 +1,31 @@
 title: Tent Status Post
 type: object
+additionalProperties: false
 properties:
   text:
     description: The status text.
     type: string
     maxLength: 256
+    required: false
+    app_required: false
   location:
-    description: The GeoJSON Point from which the post originated.
+    $ref: '#/schemas/location'
+  media:
+    description: Reference to a media post of high relevance to the post content.
     type: object
+    additionalProperties: false
+    required: false
+    app_required: false
     properties:
-      type:
-        description: The GeoJSON Object type, currently only `Point` is supported.
+      post:
+        description: Identifier of media post created by the containing post's entity.
         type: string
-      coordinates:
-        description: The longitude, latitude pair.
-        type: array
-        minItems: 2
-        maxItems: 2
-        items:
-          type: number
+        required: true
+        app_required: true
+      type:
+        description: Type URI of media post.
+        type: string
+        format: uri
+        required: true
+        app_required: true
 

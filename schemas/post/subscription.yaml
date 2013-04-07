@@ -1,0 +1,19 @@
+title: Tent Subscription Post
+type: object
+additionalProperties: false
+properties:
+  types:
+    description: List of types to be subscribed to.
+    type: array
+    required: true
+    app_required: true
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          description: Type URI to be subscribed to.
+          type: string
+          format: uri
+          required: true
+          app_required: true

@@ -1,0 +1,14 @@
+title: Tent Group Post
+type: object
+additionalProperties: false
+properties:
+  name:
+    description: Name of group.
+    type: string
+    required: true
+    app_required: true
+  description:
+    description: Description of group.
+    type: string
+    required: false
+    app_required: false

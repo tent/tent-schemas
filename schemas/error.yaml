@@ -1,5 +1,6 @@
 name: Tent Error
 type: object
+additionalProperties: true
 properties:
   error:
     description: Short description of error.

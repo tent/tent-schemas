@@ -1,7 +1,16 @@
 title: Tent Deletion Post
-type: object
-properties:
-  id:
-    description: The identifier of the post that was deleted.
-    type: string
-    required: true
+type: array
+items:
+  type: object
+  additionalProperties: false
+  properties:
+    post:
+      description: The identifier of the post that was deleted.
+      type: string
+      required: true
+      app_required: true
+    version:
+      description: The identifier of the post version that was deleted.
+      type: string
+      required: false
+      app_required: false

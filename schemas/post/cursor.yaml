@@ -1,0 +1,26 @@
+title: Tent Cursor Post
+type: object
+additionalProperties: false
+properties:
+  entity:
+    description: The entity of post.
+    type: string
+    format: uri
+    required: true
+    app_required: true
+  original_entity:
+    description: The original entity of post. Only present if entity moved.
+    type: string
+    format: uri
+    required: false
+    app_required: import
+  post:
+    description: The post identifier.
+    type: string
+    required: true
+    app_required: true
+  version:
+    description: The post version identifier.
+    type: string
+    required: false
+    app_required: false
