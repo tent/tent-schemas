@@ -82,11 +82,11 @@ properties:
               type: string
               required: false
               app_required: false
-        message:
-          description: Optional message describing changes made.
-          type: string
-          required: false
-          app_required: false
+      message:
+        description: Optional message describing changes made.
+        type: string
+        required: false
+        app_required: false
   mentions:
     description: The entities and posts that this post mentions.
     type: array
