@@ -17,7 +17,7 @@ properties:
     description: Original entity of post. Only present if entity moved.
     type: string
     format: uri
-    required: false
+    required: import
   published_at:
     description: The date/time when the post was published in milliseconds since Unix epoch.
     type: integer
@@ -27,7 +27,7 @@ properties:
     description:
       The date/time when the post was received from the publishing server in milliseconds since Unix epoch.
     type: integer
-    required: false
+    required: true
     app_required: import
   version:
     description: Post Version object.
@@ -49,7 +49,7 @@ properties:
       received_at:
         description: The date/time when the post version was received from the publishing server in milliseconds since Unix epoch.
         type: integer
-        required: false
+        required: true
         app_required: import
       parents:
         description: Parent versions.
@@ -66,7 +66,7 @@ properties:
               required: true
               app_required: true
             entity:
-              description: Entity of parent post. Should only be present if different than containing post entity.
+              description: Entity of parent post. Should only be present if different from the containing post entity.
               type: string
               format: uri
               required: false
@@ -78,7 +78,7 @@ properties:
               required: false
               app_required: import
             post:
-              description: Identifier of parent post. Should only be present if different than containing post identifier.
+              description: Identifier of parent post. Should only be present if different from the containing post identifier.
               type: string
               required: false
               app_required: false
@@ -109,17 +109,16 @@ properties:
           app_required: import
         post:
           description:
-            The unique post identifier published by the entity that is being
-            mentioned.
+            The unique identfier of the mentioned post.
           type: string
         version:
-          description: A version identifier of the post that is being mentioned.
+          description: The version identifier of the mentioned post.
           type: string
         type:
-          description: Type URI of referenced post. Should only be set when post is public or mention is private.
+          description: Type URI of referenced post. Should be set unless the mentioned post is private and the mention is public.
           type: string
         public:
-          description: Indicates whether mention is public or private. Default is public.
+          description: Indicates whether mention is public or private. Default is `true`.
           type: boolean
   licenses:
     description: The licenses that the post is released under.
@@ -131,13 +130,13 @@ properties:
       additionalProperties: false
       properties:
         url:
-          description: URL of license
+          description: URL of the license.
           type: string
           format: uri
           required: true
           app_required: true
   type:
-    description: The post type URL.
+    description: The post type URI.
     type: string
     format: uri
     required: true
@@ -155,26 +154,23 @@ properties:
       additionalProperties: false
       properties:
         category:
-          description:
-            The category this attachment is in, used to determine what to
-            include in a notification based on views.
+          description: The category of the attachment.
           type: string
           required: true
           app_required: true
         content_type:
-          description: The media type of the attachment.
+          description: The media type of the attachment, in the same format as the `Content-Type` HTTP header.
           type: string
           required: true
           app_required: true
         name:
           description:
-            The name of the attachment. The name and media type combination are
-            the unique identifier for the attachment.
+            The name of the attachment. The name and media type combination must be unique to the post version.
           type: string
           required: true
           app_required: true
         digest:
-          description: Hex encoded SHA-512 hash of data truncated to 256 bits.
+          description: Hex-encoded first 256 bits of the SHA-512 hash of the attachment.
           type: string
           required: true
           app_required: import
@@ -190,24 +186,25 @@ properties:
     app_required: import
     properties:
       id:
-        description: Identifier of the post that is the app responsible for creating this post.
+        description: Identifier of the post containing the details about the app that created this post.
         type: string
+        app_required: import
       name:
         description: The human readable name of the application.
         type: string
+        app_required: import
       url:
         description: The URL of the application.
         type: string
         format: uri
+        app_required: import
   permissions:
     description: The permissions that apply to the post. Should be omitted if public member is true.
     type: object
     additionalProperties: false
     properties:
       public:
-        description:
-          Indicates whether the post is public, public posts are available
-          to unauthenticated requests.
+        description: Indicates whether the post is public, public posts have no access restrictions.
         type: boolean
         default: false
         required: true
@@ -222,7 +219,7 @@ properties:
           additionalProperties: false
           properties:
             post:
-              description: Post identifier of group.
+              description: Post identifier of the group.
               type: string
               required: true
               app_required: true
