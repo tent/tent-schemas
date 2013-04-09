@@ -210,7 +210,7 @@ properties:
         required: true
         app_required: false
       groups:
-        description: The groups that are allowed to view the post.
+        description: The groups that are permitted to see the post.
         type: array
         required: false
         app_required: false
@@ -224,6 +224,7 @@ properties:
               required: true
               app_required: true
       entities:
+        description: The entities that are permitted to see the post.
         type: array
         required: false
         app_required: false
