@@ -17,7 +17,7 @@ properties:
     description: Original entity of post. Only present if entity moved.
     type: string
     format: uri
-    required: import
+    app_required: import
   published_at:
     description: The date/time when the post was published in milliseconds since Unix epoch.
     type: integer
