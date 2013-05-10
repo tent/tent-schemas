@@ -3,50 +3,43 @@ type: object
 additionalProperties: false
 properties:
   name:
-    description: The short display name for the app.
+    description: The name of the app.
     type: string
     required: true
-    app_required: true
   description:
-    description: The short display description of the app.
+    description: The description of the app.
     type: string
-    required: true
-    app_required: true
+    required: false
   url:
-    description: The URL for the home page of the app.
+    description: The URL for the website of the app.
     type: string
     format: uri
     required: true
-    app_required: true
   redirect_uri:
-    description: The exact (including parameters) uri that will be used as OAuth `redirect_uri`.
+    description: The URL that will be used as OAuth `redirect_uri`.
     type: string
     format: uri
-    required: false
-    app_required: false
+    required: true
   notification_url:
-    description: URL app expects to receive post notifications.
+    description: The URL where post notifications will be delivered.
     type: string
     format: uri
     required: false
-    app_required: false
   notification_post_types:
-    description: List of type uris app wants to receive. Set to a single member `all` to receive posts of all types.
+    description: The list of type URIs that the app wants to receive notifications about.
     type: array
     required: false
-    app_required: false
     items:
       type: string
       format: uri
   post_types:
-    description: List of authorized type uris.
+    description: The list of type URIs that the app wants access to.
     type: object
     required: false
-    app_required: false
     additionalProperties: false
     properties:
       read:
-        description: List of type uris the app wants to consume.
+        description: The list of type URIs that the app wants to read.
         type: array
         required: false
         app_required: false
@@ -54,20 +47,17 @@ properties:
           type: string
           format: uri
       write:
-        description: List of type uris the app wants to manipulate.
+        description: The list of type URIs that the app wants to read and modify.
         type: array
         required: false
-        app_required: false
         items:
           type: string
           format: uri
   scopes:
-    description:
-      All of the scopes that the application will use, and the reason why each is required.
+    description: The list of requested scopes.
     required: true
     type: array
     required: false
-    app_required: false
     items:
       type: string
 
