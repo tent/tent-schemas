@@ -1,0 +1,22 @@
+title: Basic Profile
+type: object
+properties:
+  name:
+    description: Name to be displayed publicly.
+    type: string
+  website:
+    description: The entity's primary website.
+    type: string
+    format: uri
+  birthdate:
+    description: Date of birth in `YYYY-MM-DD` format with omitted information set to all zero.
+    type: string
+  location:
+    description: Physical location.
+    type: string
+  gender:
+    description: Self-described gender.
+    type: string
+  bio:
+    description: Biography/self-description.
+    type: string
