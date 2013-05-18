@@ -7,8 +7,145 @@ properties:
   caption:
     description: A caption that describes the photo.
     type: string
-    required: false
-  exif:
-    description: The EXIF data that describes the photo.
+  artist:
+    description: The artist who created the image.
     type: object
-    required: false
+    properties:
+      name:
+        description: The name of the artist.
+        type: string
+      entity:
+        description: The entity URL of the artist.
+        type: string
+        format: uri
+  filename:
+    description: The name of the original file.
+    type: string
+  film_speed:
+    description: The exposure index of digital photos or the ASA rating of film speed.
+    type: string
+  focal_length:
+    description: The focal length of the system in millimeters as a stringified floating point number.
+    type: string
+    format: https://tent.io/formats/number-string
+  exposure:
+    description: Details about the photo exposure.
+    type: object
+    additionalProperties: false
+    properties:
+      bias:
+        description: The exposure bias in APEX units as a stringified floating point number.
+        type: string
+        format: https://tent.io/formats/number-string
+      mode:
+        description: The exposure mode. One of `auto`, `manual`, `bracket`.
+        type: string
+      time:
+        description: The number of seconds the shutter was open for as a stringified floating point number.
+        type: string
+        format: https://tent.io/formats/number-string
+      program:
+        description:
+          The class of program used to set the exposure. One of `manual`, `program`, `aperture`, `shutter`, `creative`,
+          `action`, `portrait`, `landscape`, `bulb`.
+        type: string
+  aperture:
+    description: The f-number (ratio of focal length to effective aperture diameter) as a stringified floating point number.
+    type: string
+    format: https://tent.io/formats/number-string
+  flash:
+    description: The flash firing details.
+    type: object
+    additionalProperties: false
+    properties:
+      fired:
+        description: Indicates whether the flash fired.
+        type: boolean
+      mode:
+        description: The flash mode. One of `firing`, `suppression`, `auto`.
+        type: string
+  white_balance:
+    description: Indicates the white balance mode. `true` is auto, `false` is manual.
+    type: boolean
+  metering_mode:
+    description: The metering mode. One of `Average`, `CenterWeightedAverage`, `Spot`, `MultiSpot`, `Pattern`, `Partial`, `other`.
+    type: string
+  camera:
+    description: Camera details.
+    type: object
+    additionalProperties: false
+    properties:
+      make:
+        description: The manufacturer of the camera.
+        type: string
+      model:
+        description: The model identifier of the camera.
+        type: string
+  lens:
+    description: Lens details.
+    type: object
+    additionalProperties: false
+    properties:
+      make:
+        description: The manufacturer of the lens.
+        type: string
+      model:
+        description: The model identifier of the lens.
+        type: string
+      focal_length:
+        description: The focal range.
+        type: object
+        additionalProperties: false
+        properties:
+          min:
+            description: The minimum focal length in millimeters as a stringified floating point number.
+            type: string
+            format: https://tent.io/formats/number-string
+          max:
+            description: The maximum focal length in millimeters as a stringified floating point number.
+            type: string
+            format: https://tent.io/formats/number-string
+      aperture:
+        description: The aperture range.
+        additionalProperties: false
+        properties:
+          min:
+            description: The minimum f-number as a stringified floating point number.
+            type: string
+            format: https://tent.io/formats/number-string
+          max:
+            description: The maximum f-number as a stringified floating point number.
+            type: string
+            format: https://tent.io/formats/number-string
+  resolution:
+    description: The resolution of the photo.
+    type: object
+    additionalProperties: false
+    properties:
+      width:
+        description: The width resolution in dots per inch.
+        type: integer
+        required: true
+      height:
+        description: The height resolution in dots per inch.
+        type: integer
+        required: true
+  dimensions:
+    description: The dimensions of the photo.
+    type: object
+    additionalProperties: false
+    properties:
+      width:
+        description: The width in pixels.
+        type: integer
+        required: true
+      height:
+        description: The height in pixels.
+        type: integer
+        required: true
+  timestamp:
+    description: The date/time when the image was taken in milliseconds since the Unix epoch.
+    type: integer
+  orientation:
+    description: The orientation of the photo. One of `horizontal`, `mirror_horizontal`, `mirror_vertical`, `90`, `180`, `270`, `mirror+90`, `mirror+270`
+    type: string
