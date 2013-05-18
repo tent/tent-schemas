@@ -3,19 +3,23 @@ type: object
 additionalProperties: false
 properties:
   entity:
-    description: The publishing entity of the post that is being reposted.
+    description: The publishing entity of the original post.
     type: string
     format: uri
     required: true
   post:
-    description: The identifier of the post that is being reposted.
+    description: The identifier of the original post.
     type: string
     required: true
   type:
-    description: The type URI of the post that is being reposted.
+    description: The type URI of the original post.
     type: string
     required: true
   version:
-    description: The version identifier of the post that is being reposted.
+    description: The identifier of the original post version.
+    type: string
+    required: false
+  note:
+    description: Text describing the favorite.
     type: string
     required: false
