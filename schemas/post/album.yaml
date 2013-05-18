@@ -17,24 +17,6 @@ properties:
     items:
       type: string
   cover:
-    description: The cover/display image of the album.
+    description: The post identifier of the cover photo for the album.
     required: false
-    type: object
-    properties:
-      entity:
-        description: The publishing entity of the post that is being reposted.
-        type: string
-        format: uri
-        required: true
-      post:
-        description: The identifier of the post that is being reposted.
-        type: string
-        required: true
-      type:
-        description: The type URI of the post that is being reposted.
-        type: string
-        required: true
-      version:
-        description: The version identifier of the post that is being reposted.
-        type: string
-        required: false
+    type: string
