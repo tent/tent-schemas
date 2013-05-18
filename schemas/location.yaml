@@ -1,13 +1,17 @@
 name: Location
-description: 'The Latitude/Longitude Point from which the instance originated. Point format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`'
+description: 'The Latitude/Longitude Point from which the instance originated. Number format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`'
 type: object
 additionalProperties: false
 properties:
   lat:
-    description: The stringified floating-point latitude.
+    description: The stringified floating point latitude.
     type: string
     required: true
   lon:
     description: The stringified floating point longitude.
     type: string
     required: true
+  altitude:
+    description: The stringified floating point number of meters above sea level.
+    type: string
+    required: false
