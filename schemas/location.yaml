@@ -4,10 +4,10 @@ type: object
 additionalProperties: false
 properties:
   lat:
-    description: The stringified floating-point latitude. Format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`
+    description: 'The stringified floating-point latitude. Format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`'
     type: string
     required: true
   lon:
-    description: The stringified floating point longitude. Format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`
+    description: 'The stringified floating point longitude. Format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`'
     type: string
     required: true
