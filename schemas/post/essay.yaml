@@ -1,4 +1,4 @@
-title: Tent Essay Post
+title: Essay
 type: object
 additionalProperties: false
 properties:
@@ -6,17 +6,14 @@ properties:
     description: The title of the post.
     type: string
     required: false
-    app_required: false
   excerpt:
     description:
       An excerpt of the post in HTML format to be displayed when the whole post
       is not available.
     type: string
     required: false
-    app_required: false
   body:
     description:
       The body of the post in HTML format. Renderers may sanitize some HTML.
     type: string
     required: true
-    app_required: true

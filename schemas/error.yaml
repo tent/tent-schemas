@@ -1,8 +1,8 @@
-name: Tent Error
+name: Error
 type: object
 additionalProperties: true
 properties:
   error:
-    description: Short description of error.
+    description: Short description of the error.
     type: string
     require: true

@@ -1,0 +1,8 @@
+title: Group Member
+type: object
+additionalProperties: false
+properties:
+  entity:
+    description: The entity that is a member of the mentioned group.
+    type: string
+    required: true

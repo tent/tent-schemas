@@ -1,4 +1,4 @@
-title: Tent Photo Post
+title: Photo
 type: object
 additionalProperties: false
 properties:
@@ -8,9 +8,7 @@ properties:
     description: A caption that describes the photo.
     type: string
     required: false
-    app_required: false
   exif:
     description: The EXIF data that describes the photo.
     type: object
     required: false
-    app_required: false

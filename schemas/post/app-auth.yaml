@@ -1,4 +1,4 @@
-title: Tent App Auth Post
+title: App Auth
 type: object
 additionalProperties: false
 properties:
@@ -7,28 +7,24 @@ properties:
     type: object
     additionalProperties: false
     required: true
-    app_required: true
     properties:
       read:
-        description: List of type uris authorized for consuming.
+        description: List of type URIs authorized for reading.
         required: true
-        app_required: true
         type: array
         items:
           type: string
-          format: https://tent.io/formats/authorize-type-uri
+          format: https://tent.io/formats/type-selector
       write:
-        description: List of type uris authorized for manipulation.
+        description: List of type URIs authorized for reading and writing.
         type: array
         required: true
-        app_required: true
         items:
           type: string
-          format: https://tent.io/formats/authorize-type-uri
+          format: https://tent.io/formats/type-selector
   scopes:
     description: List of authorized scopes.
     type: array
     required: true
-    app_required: true
     items:
       type: string

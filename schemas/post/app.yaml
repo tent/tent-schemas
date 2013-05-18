@@ -1,4 +1,4 @@
-title: Tent App Post
+title: App
 type: object
 additionalProperties: false
 properties:
@@ -31,7 +31,7 @@ properties:
     required: false
     items:
       type: string
-      format: uri
+      format: https://tent.io/formats/type-selector
   post_types:
     description: The list of type URIs that the app wants access to.
     type: object
@@ -46,13 +46,14 @@ properties:
         items:
           type: string
           format: uri
+          format: https://tent.io/formats/type-selector
       write:
         description: The list of type URIs that the app wants to read and modify.
         type: array
         required: false
         items:
           type: string
-          format: uri
+          format: https://tent.io/formats/type-selector
   scopes:
     description: The list of requested scopes.
     required: true

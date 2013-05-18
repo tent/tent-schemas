@@ -1,19 +1,9 @@
-title: Tent Subscription Post
+title: Subscription
 type: object
 additionalProperties: false
 properties:
-  types:
-    description: List of types to be subscribed to.
-    type: array
+  type:
+    description: Subscribed type.
+    type: string
     required: true
-    app_required: true
-    items:
-      type: object
-      additionalProperties: false
-      properties:
-        type:
-          description: Type URI to be subscribed to.
-          type: string
-          format: uri
-          required: true
-          app_required: true
+    format: https://tent.io/formats/type-selector

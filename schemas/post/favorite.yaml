@@ -1,4 +1,4 @@
-title: Repost
+title: Favorite
 type: object
 additionalProperties: false
 properties:
@@ -16,6 +16,6 @@ properties:
     type: string
     required: true
   version:
-    description: The identifier of the post version that is being reposted.
+    description: The version identifier of the post that is being reposted.
     type: string
     required: false

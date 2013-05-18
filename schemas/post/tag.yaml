@@ -1,4 +1,4 @@
-title: Tent Tag Post
+title: Tag
 type: object
 additionalProperties: false
 properties:
@@ -6,9 +6,7 @@ properties:
     description: Name of tag.
     type: string
     required: true
-    app_required: true
   description:
     description: Description of tag.
     type: string
     required: false
-    app_required: false

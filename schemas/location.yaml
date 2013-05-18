@@ -1,4 +1,4 @@
-name: Tent Location
+name: Location
 description: 'The Latitude/Longitude Point from which the instance originated. Point format: `[ "-" ] 1*DIGIT [ "." 1*DIGIT ]`'
 type: object
 additionalProperties: false

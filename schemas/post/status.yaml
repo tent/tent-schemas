@@ -1,4 +1,4 @@
-title: Tent Status Post
+title: Status
 type: object
 additionalProperties: false
 properties:
