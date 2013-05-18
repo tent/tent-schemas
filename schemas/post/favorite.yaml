@@ -11,10 +11,6 @@ properties:
     description: The identifier of the original post.
     type: string
     required: true
-  type:
-    description: The type URI of the original post.
-    type: string
-    required: true
   version:
     description: The identifier of the original post version.
     type: string
