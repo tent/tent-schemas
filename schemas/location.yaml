@@ -3,11 +3,11 @@ description: 'The Latitude/Longitude Point from which the instance originated. N
 type: object
 additionalProperties: false
 properties:
-  lat:
+  latitude:
     description: The stringified floating point latitude.
     type: string
     required: true
-  lon:
+  longitude:
     description: The stringified floating point longitude.
     type: string
     required: true
