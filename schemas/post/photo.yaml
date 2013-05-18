@@ -107,6 +107,7 @@ properties:
             format: https://tent.io/formats/number-string
       aperture:
         description: The aperture range.
+        type: object
         additionalProperties: false
         properties:
           min:
