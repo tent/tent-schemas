@@ -7,6 +7,12 @@ properties:
     type: string
     format: uri
     required: true
+  previous_entities:
+    description: Previous URIs used to identify the entity.
+    type: array
+    items:
+      type: string
+      format: uri
   servers:
     description: The servers that represent the entity.
     type: array
