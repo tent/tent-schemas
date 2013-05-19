@@ -57,7 +57,7 @@ properties:
               required: true
             post_attachment:
               description:
-                The endpoint that redirects to a `attachment` endpoint, used to download an attachment when the digest
+                The endpoint that redirects to an `attachment` URL, used to download an attachment when the digest
                 is unspecified.  The `{entity}`, `{post}`, `{version}`, and `{name}` variables must be replaced with the
                 URL-encoded publishing entity URL, post identifier, post version, and attachment name respectively. The
                 `{version}` variable may be set to `latest` instead of specifying a version.
@@ -77,7 +77,7 @@ properties:
               type: string
               format: uri
               required: true
-            server_inf:
+            server_info:
               description: The endpoint where metadata specific to the server is available.
               type: string
               format: uri
