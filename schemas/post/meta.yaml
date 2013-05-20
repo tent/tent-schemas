@@ -13,6 +13,22 @@ properties:
     items:
       type: string
       format: uri
+  name:
+    description: The entity's name or pseudonym.
+    type: string
+    maxLength: 256
+  bio:
+    description: Biography/self-description of entity.
+    type: string
+    maxLength: 256
+  website:
+    description: The entity's primary website.
+    type: string
+    format: uri
+  location:
+    description: The entity's physical location.
+    type: string
+    maxLength: 256
   servers:
     description: The servers that represent the entity.
     type: array

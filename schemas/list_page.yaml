@@ -24,10 +24,43 @@ properties:
         description: Link to the last page. Omitted if the current page is the last page.
         type: string
         format: uri
-  data:
-    description: The list page data.
+  posts:
+    description: A list of posts.
     type: array
-    required: true
     items:
       type: object
-      additionalProperties: true
+  mentions:
+    description: A list of mentions.
+    type: array
+    items:
+      type: object
+  versions:
+    description: A list of versions.
+    type: array
+    items:
+      type: object
+  meta:
+    description: Meta details for each entity in the `posts`, `mentions`, and `refs` arrays.
+    type: object
+    additionalProperties: false
+    patternProperties:
+      .+:
+        name:
+          description: The entity's name or pseudonym.
+          type: string
+          maxLength: 256
+        bio:
+          description: Biography/self-description of entity.
+          type: string
+          maxLength: 256
+        avatar_digest:
+          description: The attachment digest of the entity's avatar image.
+          type: string
+        website:
+          description: The entity's primary website.
+          type: string
+          format: uri
+        location:
+          description: The entity's physical location.
+          type: string
+          maxLength: 256
