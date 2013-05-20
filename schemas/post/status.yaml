@@ -9,18 +9,3 @@ properties:
     required: true
   location:
     $ref: '#/schemas/location'
-  media:
-    description: Reference to a media post relevant to the post content.
-    type: object
-    additionalProperties: false
-    required: false
-    properties:
-      post:
-        description: Identifier of media post created by the containing post's entity.
-        type: string
-        required: true
-      type:
-        description: Type URI of media post.
-        type: string
-        format: uri
-        required: true
