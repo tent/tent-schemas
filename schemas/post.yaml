@@ -100,16 +100,14 @@ properties:
           description: The entity that is being mentioned.
           type: string
           format: uri
-          required: true
         original_entity:
-          description: The original entity that is being mentioned. Only present if the entity moved.
+          description: The original entity that is being mentioned. Only present if the entity changed.
           type: string
           format: uri
-          required: false
           app_required: import
         post:
           description:
-            The unique identfier of the mentioned post.
+            The unique identifier of the mentioned post.
           type: string
         version:
           description: The version identifier of the mentioned post.
@@ -120,6 +118,35 @@ properties:
         public:
           description: Indicates whether mention is public or private. Default is `true`.
           type: boolean
+  refs:
+    description: The posts that this post references.
+    type: array
+    required: false
+    app_required: false
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        entity:
+          description: The publishing entity of the referenced post.
+          type: string
+          format: uri
+        original_entity:
+          description: The original publishing entity of the referenced post. Only present if the entity changed.
+          type: string
+          format: uri
+          app_required: import
+        post:
+          description: The unique identfier of the referenced post.
+          type: string
+          required: true
+          app_required: true
+        version:
+          description: The version identifier of the referenced post.
+          type: string
+        type:
+          description: Type URI of referenced post. Should be set unless the referenced post is private.
+          type: string
   licenses:
     description: The licenses that the post is released under.
     type: array

@@ -10,13 +10,20 @@ properties:
     description: The description of the album.
     type: string
     required: false
-  photos:
-    description: The list of post identifiers of photos that the album contains.
-    type: array
-    required: true
-    items:
-      type: string
   cover:
-    description: The post identifier of the cover photo for the album.
+    description: The cover photo of the album, this post must also be included in the `refs` array.
     required: false
-    type: string
+    type: object
+    additionalProperties: false
+    properties:
+      entity:
+        description: The publishing entity of the cover photo post.
+        type: string
+        format: uri
+      post:
+        description: The unique identfier of the cover photo post.
+        type: string
+        required: true
+      version:
+        description: The version identifier of the cover photo post.
+        type: string

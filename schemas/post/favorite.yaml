@@ -2,19 +2,6 @@ title: Favorite
 type: object
 additionalProperties: false
 properties:
-  entity:
-    description: The publishing entity of the original post.
-    type: string
-    format: uri
-    required: true
-  post:
-    description: The identifier of the original post.
-    type: string
-    required: true
-  version:
-    description: The identifier of the original post version.
-    type: string
-    required: false
   note:
     description: Text describing the favorite.
     type: string
