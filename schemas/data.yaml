@@ -48,8 +48,8 @@ properties:
       type: array
       items:
         type: object
-  meta:
-    description: Meta details for each entity in the `posts`, `mentions`, and `refs` arrays.
+  profiles:
+    description: Profile details for each publishing entity and/or mentioned entity in the `posts`, `mentions`, and `refs` arrays.
     type: object
     additionalProperties: false
     patternProperties:
