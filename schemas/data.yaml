@@ -1,0 +1,75 @@
+title: Post Data
+type: object
+additionalProperties: false
+properties:
+  pages:
+    description: Links to other pages. Each link contains a relative URL with only query parameters, starting with `?`.
+    type: object
+    additionalProperties: false
+    properties:
+      first:
+        description: Link to the first page. Omitted if the current page is the first page.
+        type: string
+        format: uri
+      prev:
+        description: Link to the previous page. Omitted if the current page is the first page.
+        type: string
+        format: uri
+      next:
+        description: Link to the next page. Omitted if the current page is the last page.
+        type: string
+        format: uri
+      last:
+        description: Link to the last page. Omitted if the current page is the last page.
+        type: string
+        format: uri
+  posts:
+    description: A list of posts.
+    type: array
+    items:
+      type: object
+  mentions:
+    description: A list of mentions.
+    type: array
+    items:
+      type: object
+  versions:
+    description: A list of versions.
+    type: array
+    items:
+      type: object
+  post:
+    description: A single post.
+    type: object
+  refs:
+    description: An array of referenced posts for each post in the posts array.
+    type: array
+    items:
+      type: array
+      items:
+        type: object
+  profiles:
+    description: Profile details for each publishing entity and/or mentioned entity in the `posts`, `mentions`, and `refs` arrays.
+    type: object
+    additionalProperties: false
+    patternProperties:
+      .+:
+        name:
+          description: The entity's name or pseudonym.
+          type: string
+          maxLength: 256
+        bio:
+          description: Biography/self-description of entity.
+          type: string
+          maxLength: 256
+        avatar_digest:
+          description: The attachment digest of the entity's avatar image.
+          type: string
+        website:
+          description: The entity's primary website.
+          type: string
+          format: uri
+        location:
+          description: The entity's physical location.
+          type: string
+          maxLength: 256
