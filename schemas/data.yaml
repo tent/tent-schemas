@@ -1,11 +1,10 @@
-title: List Page
+title: Post Data
 type: object
 additionalProperties: false
 properties:
   pages:
     description: Links to other pages. Each link contains a relative URL with only query parameters, starting with `?`.
     type: object
-    required: true
     additionalProperties: false
     properties:
       first:
@@ -39,6 +38,16 @@ properties:
     type: array
     items:
       type: object
+  post:
+    description: A single post.
+    type: object
+  refs:
+    description: An array of referenced posts for each post in the posts array.
+    type: array
+    items:
+      type: array
+      items:
+        type: object
   meta:
     description: Meta details for each entity in the `posts`, `mentions`, and `refs` arrays.
     type: object
