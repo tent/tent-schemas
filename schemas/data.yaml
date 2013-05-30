@@ -3,7 +3,7 @@ type: object
 additionalProperties: false
 properties:
   pages:
-    description: Links to other pages. Each link contains a relative URL with only query parameters, starting with `?`.
+    description: Links to other pages. Each link contains a relative reference starting with `?` and followed by zero or more query parameters.
     type: object
     additionalProperties: false
     properties:
