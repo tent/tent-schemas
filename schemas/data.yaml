@@ -10,19 +10,19 @@ properties:
       first:
         description: Link to the first page. Omitted if the current page is the first page.
         type: string
-        format: uri
+        format: https://tent.io/formats/page-uri
       prev:
         description: Link to the previous page. Omitted if the current page is the first page.
         type: string
-        format: uri
+        format: https://tent.io/formats/page-uri
       next:
         description: Link to the next page. Omitted if the current page is the last page.
         type: string
-        format: uri
+        format: https://tent.io/formats/page-uri
       last:
         description: Link to the last page. Omitted if the current page is the last page.
         type: string
-        format: uri
+        format: https://tent.io/formats/page-uri
   posts:
     description: A list of posts.
     type: array
