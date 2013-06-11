@@ -27,7 +27,6 @@ properties:
     description:
       The date/time when the post was received from the publishing server in milliseconds since Unix epoch.
     type: integer
-    required: true
     app_required: import
   version:
     description: Post Version object.
@@ -49,7 +48,6 @@ properties:
       received_at:
         description: The date/time when the post version was received from the publishing server in milliseconds since Unix epoch.
         type: integer
-        required: true
         app_required: import
       parents:
         description: Parent versions.
