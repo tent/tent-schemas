@@ -58,29 +58,29 @@ properties:
             oauth_auth:
               description: The endpoint for the OAuth 2.0 Authorization Request.
               type: string
-              format: uri
+              format: uri-template
               required: true
             oauth_token:
               description: The endpoint for the OAuth 2.0 Token Request.
               type: string
-              format: uri
+              format: uri-template
               required: true
             posts_feed:
               description: The endpoint that serves lists of posts.
               type: string
-              format: uri
+              format: uri-template
               required: true
             new_post:
               description: The endpoint used to create new posts that don't have an identifier assigned.
               type: string
-              format: uri
+              format: uri-template
               required: true
             post:
               description:
                 The endpoint used to retrieve and update a single post. The `{entity}` and `{post}` variables must be
                 replaced with the URL parameter encoded entity URL and post identifier respectively.
               type: string
-              format: uri
+              format: uri-template
               required: true
             post_attachment:
               description:
@@ -89,7 +89,7 @@ properties:
                 URL-encoded publishing entity URL, post identifier, post version, and attachment name respectively. The
                 `{version}` variable may be set to `latest` instead of specifying a version.
               type: string
-              format: uri
+              format: uri-template
               required: true
             attachment:
               description:
@@ -97,15 +97,15 @@ properties:
                 variables must be replaced with the URL-encoded publishing entity URL and attachment digest
                 respectively.
               type: string
-              format: uri
+              format: uri-template
               required: true
             batch:
               description: The endpoint used to make batch requests to the server.
               type: string
-              format: uri
+              format: uri-template
               required: true
             server_info:
               description: The endpoint where metadata specific to the server is available.
               type: string
-              format: uri
+              format: uri-template
               required: true
