@@ -85,9 +85,8 @@ properties:
             post_attachment:
               description:
                 The endpoint that redirects to an `attachment` URL, used to download an attachment when the digest
-                is unspecified.  The `{entity}`, `{post}`, `{version}`, and `{name}` variables must be replaced with the
-                URL-encoded publishing entity URL, post identifier, post version, and attachment name respectively. The
-                `{version}` variable may be set to `latest` instead of specifying a version.
+                is unspecified.  The `{entity}`, `{post}`, and `{name}` variables must be replaced with the
+                URL-encoded publishing entity URL, post identifier, and attachment name respectively.
               type: string
               format: uri-template
               required: true
