@@ -1,0 +1,18 @@
+title: Delivery Failure
+type: object
+additionalProperties: false
+properties:
+  entity:
+    description: Entity uri of recipient
+    type: string
+    format: uri
+    required: true
+    app_required: true
+  status:
+    description: Intent of delivering server to retry or not. Must be set to `permanent` or `temporary`.
+    type: string
+    required: true
+    app_required: true
+  reason:
+    description: Reason for failure. Must be set to one of `unreachable`, `discovery_failed`, `relationship_failed`, or `delivery_failed`.
+    type: string
