@@ -2,7 +2,7 @@ title: App Auth
 type: object
 additionalProperties: false
 properties:
-  post_types:
+  types:
     description: List of authorized type uris.
     type: object
     additionalProperties: false

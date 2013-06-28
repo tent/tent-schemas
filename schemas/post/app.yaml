@@ -25,14 +25,14 @@ properties:
     type: string
     format: uri
     required: false
-  notification_post_types:
+  notification_types:
     description: The list of type URIs that the app wants to receive notifications about.
     type: array
     required: false
     items:
       type: string
       format: https://tent.io/formats/type-selector
-  post_types:
+  types:
     description: The list of type URIs that the app wants access to.
     type: object
     required: false
