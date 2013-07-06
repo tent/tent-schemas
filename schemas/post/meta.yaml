@@ -108,3 +108,8 @@ properties:
               type: string
               format: uri-template
               required: true
+            discover:
+              description: The endpoint that performs discovery on any given entity. The `{entity}` varible must be replaced with the URL-encoded entity to perform discovery on.
+              type: string
+              format: uri-template
+              required: true
