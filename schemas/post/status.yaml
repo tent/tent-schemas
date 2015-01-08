@@ -5,7 +5,7 @@ properties:
   text:
     description: The status text.
     type: string
-    maxLength: 256
+    maxLength: 512
     required: true
   location:
     $ref: '#/schemas/location'
